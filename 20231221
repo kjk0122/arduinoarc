@@ -46,3 +46,43 @@ void loop() {
     }
   }
 }
+
+const int r = 11;
+const int g = 10;
+const int b = 9;
+
+void setup() {
+  pinMode(r, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(b, OUTPUT);
+}
+
+void loop() {
+  fadeColor(255, 0, 0);  // 빨강
+  fadeColor(0, 255, 0);  // 초록
+  fadeColor(0, 0, 255);  // 파랑
+  fadeColor(255, 255, 0);  // 노랑 (빨강 + 초록)
+  fadeColor(0, 255, 255);  // 청록 (초록 + 파랑)
+  fadeColor(255, 0, 255);  // 자홍 (빨강 + 파랑)
+  fadeColor(255, 255, 255);  // 흰색 (빨강 + 초록 + 파랑)
+}
+
+void fadeColor(int red, int green, int blue) {
+  // Color to White
+  for (int i = 0; i <= 255; i++) {
+    analogWrite(r, red * i / 255);
+    analogWrite(g, green * i / 255);
+    analogWrite(b, blue * i / 255);
+    delay(10);
+  }
+  delay(1000);
+
+  // White to Color
+  for (int i = 255; i >= 0; i--) {
+    analogWrite(r, red * i / 255);
+    analogWrite(g, green * i / 255);
+    analogWrite(b, blue * i / 255);
+    delay(10);
+  }
+  delay(500);
+}
