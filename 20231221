@@ -1,0 +1,29 @@
+const unsigned int led[8]={0,1,2,3,4,5,6,7};
+void setup() {
+  for(int i=0;i<=7;i++){
+    // pinMode(i,OUTPUT);
+    pinMode(led[i],OUTPUT);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  for(int i=0;i<=7;i++){
+  analogWrite(i, 128);
+  delay(600);
+  analogWrite(i, 0);
+  }
+}
+
+void setup() {
+  // initialize the serial communication:
+  Serial.begin(115200);
+}
+
+void loop() {
+  // check if data has been sent from the computer:
+  if (Serial.available()>0) {
+    String input = Serial.readStringUntil('\n');
+    Serial.println(input);
+  }
+}
