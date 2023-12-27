@@ -1,0 +1,25 @@
+오전
+
+클래스 공부
+
+오후
+인터럽트에 대해 배웠다
+(인터럽트는 짧게 쓰자.)
+
+void setup() {
+~~~
+  attachInterrupt(digitalPinToInterrupt(interruptPin), blink(인터럽트 클래스 이름), CHANGE);
+}
+
+void blink() { <--인터럽트 클래스 이름
+  state = !state;
+}
+
+램, 프로그램 메모리, CPU 코어
+아두이노 map() 함수
+
+좀 더 자세한 건 여기에서 검색하고 활용하자
+
+https://www.arduino.cc/reference/ko/
+
+#클래스#인터럽트#매핑
